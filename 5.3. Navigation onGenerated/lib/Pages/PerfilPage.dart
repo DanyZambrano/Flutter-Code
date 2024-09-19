@@ -24,7 +24,7 @@ class PerfilPage extends StatelessWidget {
 
             ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, ROUTE_HOME);
+                Navigator.popAndPushNamed(context, ROUTE_HOME);
               },
               child: const Text('Home'),
             ),

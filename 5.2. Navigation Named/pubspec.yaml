@@ -22,4 +22,6 @@ flutter:
       - family: PlaywriteAT
         fonts:
           - asset: assets/fonts/PlaywriteAT-Regular.ttf
-
+  
+  assets:
+    - assets/images/

@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.popAndPushNamed(context, ROUTE_LOGIN);
+                        Navigator.pushNamed(context, ROUTE_LOGIN);
                       },
                       child: const Text('Login'),
                     ),

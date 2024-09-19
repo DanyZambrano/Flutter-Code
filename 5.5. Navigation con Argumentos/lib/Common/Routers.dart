@@ -12,11 +12,11 @@ const String ROUTE_PERFIL = "/perfil";
 class Routers {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case "/home":
+      case ROUTE_HOME:
         return PageTransition(child: const HomePage(), type: PageTransitionType.fade);
-      case "/login":
+      case ROUTE_LOGIN:
         return PageTransition(child: const LoginPage(), type: PageTransitionType.fade);
-      case "/perfil":
+      case ROUTE_PERFIL:
         final args = settings.arguments as RoutersArg;
         return PageTransition(child: PerfilPage(titulo: args.titulo, mensaje: args.mensaje), type: PageTransitionType.fade);
       default:

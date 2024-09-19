@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Pantalla3 extends StatelessWidget {
-  const Pantalla3({super.key});
+class Pantalla2 extends StatelessWidget {
+  const Pantalla2({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final String message = ModalRoute.of(context)!.settings.arguments as String; 
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pantalla 3'),
+        title: const Text('Pantalla 2'),
       ),
       body: Center(
         child: Row(
@@ -20,17 +18,18 @@ class Pantalla3 extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text('Pantalla 2'),
+              child: const Text('Pantalla 1'),
             ),
 
-            Text(message),
-
-            //Boton Pantalla principal
+            //Boton Pantalla siguiente
             ElevatedButton(
               onPressed: () {
-                Navigator.popAndPushNamed(context, '/');
+                 Navigator.pushNamed(
+                  context, "/Pantalla3",
+                  arguments: "Dataxx",
+                  );
               },
-              child: const Text('Pantalla 1 o /'),
+              child: const Text('Pantalla 3'),
             ),
           ],
         ),

@@ -10,11 +10,11 @@ const String ROUTE_PERFIL = "/perfil";
 class Routers {
   static Route<dynamic>generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case "/":
+      case ROUTE_HOME:
         return MaterialPageRoute(builder: (_) => const HomePage());
-      case "/login":
+      case ROUTE_LOGIN:
         return MaterialPageRoute(builder: (_) => const LoginPage());
-      case "/perfil":
+      case ROUTE_PERFIL:
         return MaterialPageRoute(builder: (_) => const PerfilPage());
       default:
         return MaterialPageRoute(builder: (_) => const HomePage());

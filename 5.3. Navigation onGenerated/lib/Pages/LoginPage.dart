@@ -24,7 +24,7 @@ class LoginPage extends StatelessWidget {
 
                 ElevatedButton(
                   onPressed: () { 
-                    Navigator.pushReplacementNamed(context, ROUTE_PERFIL);
+                    Navigator.pushNamed(context, ROUTE_PERFIL);
                   },
                   child: const Text('Perfil'),
                 ),
