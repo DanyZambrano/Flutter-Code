@@ -1,0 +1,16 @@
+{
+    "INTL_FACTURAS" : "Invoices",
+    "INTL_REPORTES" : "Reports",
+    "INTL_PERFIL" : "Profile",
+    "INTL_PERFIL_DESCRIPTION" : "You can config your profile here!",
+    "INTL_CONFIGURACION" : "Configuration",
+    
+    "INTL_DTBUTTON" : "Select a Date",
+    "INTL_DTHELP" : "Select your Birthday",
+    "INTL_DTCANCEL" : "Close",
+    "INTL_DTCONFIRM" : "Ok",
+    "INTL_DTHINT" : "Month/Day/Year",
+    "INTL_DTLABEL" : "Birthday",
+    "INTL_DTERROR" : "Please enter a valid date!",
+    "INTL_DTEFORMAT" : "The format is not correct!"
+}

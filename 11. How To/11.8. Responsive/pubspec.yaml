@@ -1,0 +1,27 @@
+name: flutter_widgets
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.1 <4.0.0'
+
+dependencies:
+  sizer: ^3.0.3
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+      - family: PlaywriteAT
+        fonts:
+          - asset: assets/fonts/PlaywriteAT-Regular.ttf
+
+  assets:
+    - assets/images/

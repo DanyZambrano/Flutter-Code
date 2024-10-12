@@ -1,0 +1,16 @@
+{
+    "INTL_FACTURAS" : "Facturas",
+    "INTL_REPORTES" : "Reportes",
+    "INTL_PERFIL" : "Perfil",
+    "INTL_PERFIL_DESCRIPTION" : "Puedes configurar tu perfil aca!",
+    "INTL_CONFIGURACION" : "Configuración",
+    
+    "INTL_DTBUTTON" : "Selecione una Fecha",
+    "INTL_DTHELP" : "Selecciona tu Cumpleaños",
+    "INTL_DTCANCEL" : "Cerrar",
+    "INTL_DTCONFIRM" : "Confirmar",
+    "INTL_DTHINT" : "Mes/Dia/Año",
+    "INTL_DTLABEL" : "Fecha de Cumpleaños",
+    "INTL_DTERROR" : "Indroduzca una fecha valida!",
+    "INTL_DTEFORMAT" : "El formato no es el correcto!"
+}
