@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "198085913361",
+    "project_id": "flutterfirebasedemo-83d73",
+    "storage_bucket": "flutterfirebasedemo-83d73.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198085913361:android:657483338bccbfac08fab0",
+        "android_client_info": {
+          "package_name": "com.example.flutter_widgets"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8MDiig-mRkP6vMuhxtNNZkBVt1eSZCKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
