@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../pages/page1.dart';
 import '../pages/page2.dart';
 import '../pages/tipos_de_datos.dart';
+import '../pages/control_flow.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -26,6 +27,9 @@ class _MyHomePageState extends State<MyHomePage> {
       case 2:
         page = TiposDeDatos();
         break;
+      case 3:
+        page = ControlFlowPage();
+        break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -43,14 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       icon: Icon(Icons.home),
                       label: Text('Que es Dart?'),
                     ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.favorite),
-                      label: Text('Constante y Variables'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.star),
-                      label: Text('Tipos de Datos'),
-                    ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.favorite),
+                    label: Text('Constante y Variables'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.star),
+                    label: Text('Tipos de Datos'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.alt_route),
+                    label: Text('Control Flow'),
+                  ),
                   ],
                   selectedIndex: selectedIndex,
                   onDestinationSelected: (value) {
