@@ -115,20 +115,16 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
               ),
-              child: Row(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'assets/dart_logo.png',
-                    height: 40,
-                    width: 120,
-                  ),
-                  const SizedBox(width: 16),
-                  Text(
-                    'Learning',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: Center(
+                      child: Image.asset(
+                        'assets/logo.webp',
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ],
