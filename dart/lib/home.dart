@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../pages/page1.dart';
-import '../pages/page2.dart';
+import '../pages/que_es.dart';
+import '../pages/const_var.dart';
 import '../pages/tipos_de_datos.dart';
 import '../pages/control_flow.dart';
 
@@ -19,10 +19,10 @@ class _MyHomePageState extends State<MyHomePage> {
     Widget page;
     switch (selectedIndex) {
       case 0:
-        page = Page1();
+        page = QueEs();
         break;
       case 1:
-        page = Page2();
+        page = ConstVar();
         break;
       case 2:
         page = TiposDeDatos();

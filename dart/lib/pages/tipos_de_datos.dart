@@ -126,7 +126,7 @@ class _TiposDeDatosState extends State<TiposDeDatos> {
             ),
             SizedBox(height: 16),
             DropdownButtonFormField<String>(
-              value: _selectedType,
+              initialValue: _selectedType,
               decoration: InputDecoration(
                 labelText: 'Tipo de dato',
                 border: OutlineInputBorder(),
@@ -137,10 +137,7 @@ class _TiposDeDatosState extends State<TiposDeDatos> {
                 DropdownMenuItem(value: 'String', child: Text('String')),
                 DropdownMenuItem(value: 'bool', child: Text('bool')),
                 DropdownMenuItem(value: 'List', child: Text('List<String>')),
-                DropdownMenuItem(
-                  value: 'Map',
-                  child: Text('Map<String, int>'),
-                ),
+                DropdownMenuItem(value: 'Map', child: Text('Map<String, int>')),
                 DropdownMenuItem(
                   value: 'nullable',
                   child: Text('int? (nullable)'),
@@ -203,7 +200,8 @@ class _TiposDeDatosState extends State<TiposDeDatos> {
             else ...[
               TextField(
                 controller: _valueController,
-                keyboardType: _selectedType == 'int' || _selectedType == 'double'
+                keyboardType:
+                    _selectedType == 'int' || _selectedType == 'double'
                     ? TextInputType.numberWithOptions(decimal: true)
                     : TextInputType.text,
                 decoration: InputDecoration(
@@ -235,10 +233,7 @@ class _TiposDeDatosState extends State<TiposDeDatos> {
               SizedBox(height: 12),
               Text(
                 'Código generado:',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
               SizedBox(height: 8),
               Container(

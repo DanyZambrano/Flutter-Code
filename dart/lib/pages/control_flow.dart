@@ -112,7 +112,7 @@ do {
           ),
           SizedBox(height: 16),
           DropdownButtonFormField<String>(
-            value: _selectedStructure,
+            initialValue: _selectedStructure,
             decoration: InputDecoration(
               labelText: 'Estructura',
               border: OutlineInputBorder(),
@@ -168,17 +168,11 @@ do {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    _demoDescription,
-                    style: TextStyle(fontSize: 16),
-                  ),
+                  Text(_demoDescription, style: TextStyle(fontSize: 16)),
                   SizedBox(height: 12),
                   Text(
                     'Codigo generado:',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                   SizedBox(height: 8),
                   Container(
@@ -193,10 +187,7 @@ do {
                   SizedBox(height: 12),
                   Text(
                     'Salida:',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                   SizedBox(height: 8),
                   Container(
@@ -261,7 +252,8 @@ do {
         final isEven = number % 2 == 0;
         _demoDescription =
             'Usamos if/else para decidir si el numero $number es par o impar.';
-        _demoCode = '''
+        _demoCode =
+            '''
 final numero = $number;
 if (numero % 2 == 0) {
   print('Es par');
@@ -284,7 +276,8 @@ if (numero % 2 == 0) {
         final dia = dias[number] ?? 'Sin coincidencia';
         _demoDescription =
             'El switch compara el numero $number con diferentes casos para mostrar el dia correspondiente.';
-        _demoCode = '''
+        _demoCode =
+            '''
 final diaNumero = $number;
 switch (diaNumero) {
   case 1:
@@ -315,18 +308,19 @@ switch (diaNumero) {
         _demoOutput = [dia];
         break;
       case 'for':
-        final iterations =
-            List.generate(number, (index) => 'Iteracion $index');
+        final iterations = List.generate(number, (index) => 'Iteracion $index');
         final rango = number > 0 ? '0 a ${number - 1}' : '0 (sin iteraciones)';
         _demoDescription =
             'El ciclo for recorre un rango de $rango y muestra cada paso.';
-        _demoCode = '''
+        _demoCode =
+            '''
 for (var i = 0; i < $number; i++) {
   print('Iteracion \$i');
 }
 ''';
-        _demoOutput =
-            number > 0 ? iterations : ['(No se ejecuta porque el limite es 0)'];
+        _demoOutput = number > 0
+            ? iterations
+            : ['(No se ejecuta porque el limite es 0)'];
         break;
       case 'while':
         final buffer = <String>[];
@@ -340,7 +334,8 @@ for (var i = 0; i < $number; i++) {
         }
         _demoDescription =
             'El ciclo while continua mientras el contador sea mayor que 0.';
-        _demoCode = '''
+        _demoCode =
+            '''
 var contador = $number;
 while (contador > 0) {
   print('Contador: \$contador');
@@ -358,7 +353,8 @@ while (contador > 0) {
         } while (contador > 0);
         _demoDescription =
             'El ciclo do-while se ejecuta al menos una vez, incluso si el numero inicial es 0.';
-        _demoCode = '''
+        _demoCode =
+            '''
 var contador = $number;
 do {
   print('Contador: \$contador');
