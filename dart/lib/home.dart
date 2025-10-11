@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import '../pages/que_es.dart';
+import '../pages/comentarios.dart';
 import '../pages/const_var.dart';
 import '../pages/tipos_de_datos.dart';
 import '../pages/control_flow.dart';
+import '../pages/ternario.dart';
+import '../pages/enum.dart';
+import '../pages/operadores.dart';
+import '../pages/colleciones.dart';
+import '../pages/genericos.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -22,13 +28,31 @@ class _MyHomePageState extends State<MyHomePage> {
         page = QueEs();
         break;
       case 1:
-        page = ConstVar();
+        page = ComentariosPage();
         break;
       case 2:
-        page = TiposDeDatos();
+        page = ConstVar();
         break;
       case 3:
+        page = TiposDeDatos();
+        break;
+      case 4:
+        page = OperadoresPage();
+        break;
+      case 5:
+        page = TernarioPage();
+        break;
+      case 6:
         page = ControlFlowPage();
+        break;
+      case 7:
+        page = EnumPage();
+        break;
+      case 8:
+        page = ColeccionesPage();
+        break;
+      case 9:
+        page = GenericsPage();
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
@@ -48,6 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       label: Text('Que es Dart?'),
                     ),
                   NavigationRailDestination(
+                    icon: Icon(Icons.comment),
+                    label: Text('Comentarios'),
+                  ),
+                  NavigationRailDestination(
                     icon: Icon(Icons.favorite),
                     label: Text('Constante y Variables'),
                   ),
@@ -56,8 +84,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     label: Text('Tipos de Datos'),
                   ),
                   NavigationRailDestination(
+                    icon: Icon(Icons.calculate),
+                    label: Text('Operadores'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.question_mark),
+                    label: Text('Operador Ternario'),
+                  ),
+                  NavigationRailDestination(
                     icon: Icon(Icons.alt_route),
                     label: Text('Control Flow'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.list),
+                    label: Text('Enums'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.collections),
+                    label: Text('Colecciones'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.code),
+                    label: Text('Genéricos'),
                   ),
                   ],
                   selectedIndex: selectedIndex,
