@@ -9,6 +9,11 @@ import '../pages/enum.dart';
 import '../pages/operadores.dart';
 import '../pages/colleciones.dart';
 import '../pages/genericos.dart';
+import '../pages/null_safety.dart';
+import '../pages/funcion.dart';
+import '../pages/clases.dart';
+import '../pages/excepcion.dart';
+import '../pages/error_handle.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -53,6 +58,21 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
       case 9:
         page = GenericsPage();
+        break;
+      case 10:
+        page = NullSafetyPage();
+        break;
+      case 11:
+        page = FuncionPage();
+        break;
+      case 12:
+        page = ClasesPage();
+        break;
+      case 13:
+        page = ExcepcionPage();
+        break;
+      case 14:
+        page = ErrorHandlePage();
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
@@ -106,6 +126,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   NavigationRailDestination(
                     icon: Icon(Icons.code),
                     label: Text('Genéricos'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.shield),
+                    label: Text('Null Safety'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.functions),
+                    label: Text('Funciones'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.class_),
+                    label: Text('Clases'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.error_outline),
+                    label: Text('Excepciones'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.warning_amber),
+                    label: Text('Manejo de Errores'),
                   ),
                   ],
                   selectedIndex: selectedIndex,
