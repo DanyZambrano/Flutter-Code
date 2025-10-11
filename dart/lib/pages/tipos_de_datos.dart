@@ -27,6 +27,7 @@ class _TiposDeDatosState extends State<TiposDeDatos> {
     return SingleChildScrollView(
       padding: EdgeInsets.all(24),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(

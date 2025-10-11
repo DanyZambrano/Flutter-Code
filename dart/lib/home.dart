@@ -11,9 +11,15 @@ import '../pages/colleciones.dart';
 import '../pages/genericos.dart';
 import '../pages/null_safety.dart';
 import '../pages/funcion.dart';
+import '../pages/metodos.dart';
 import '../pages/clases.dart';
 import '../pages/excepcion.dart';
 import '../pages/error_handle.dart';
+import '../pages/typedef.dart';
+import '../pages/metadata.dart';
+import '../pages/concurrencia.dart';
+import '../pages/interoperabilidad.dart';
+import '../pages/style.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -66,111 +72,306 @@ class _MyHomePageState extends State<MyHomePage> {
         page = FuncionPage();
         break;
       case 12:
-        page = ClasesPage();
+        page = MetodosPage();
         break;
       case 13:
-        page = ExcepcionPage();
+        page = ClasesPage();
         break;
       case 14:
+        page = ExcepcionPage();
+        break;
+      case 15:
         page = ErrorHandlePage();
+        break;
+      case 16:
+        page = TypedefPage();
+        break;
+      case 17:
+        page = MetadataPage();
+        break;
+      case 18:
+        page = ConcurrenciaPage();
+        break;
+      case 19:
+        page = InteroperabilidadPage();
+        break;
+      case 20:
+        page = StylePage();
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Scaffold(
-          body: Row(
-            children: [
-              SafeArea(
-                child: NavigationRail(
-                  extended: constraints.maxWidth >= 600,
-                  destinations: [
-                    NavigationRailDestination(
-                      icon: Icon(Icons.home),
-                      label: Text('Que es Dart?'),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Colors.white,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/dart_logo.png',
+                    height: 40,
+                    width: 120,
+                  ),
+                  const SizedBox(width: 16),
+                  Text(
+                    'Learning',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
                     ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.comment),
-                    label: Text('Comentarios'),
                   ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.favorite),
-                    label: Text('Constante y Variables'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.star),
-                    label: Text('Tipos de Datos'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.calculate),
-                    label: Text('Operadores'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.question_mark),
-                    label: Text('Operador Ternario'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.alt_route),
-                    label: Text('Control Flow'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.list),
-                    label: Text('Enums'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.collections),
-                    label: Text('Colecciones'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.code),
-                    label: Text('Genéricos'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.shield),
-                    label: Text('Null Safety'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.functions),
-                    label: Text('Funciones'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.class_),
-                    label: Text('Clases'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.error_outline),
-                    label: Text('Excepciones'),
-                  ),
-                  NavigationRailDestination(
-                    icon: Icon(Icons.warning_amber),
-                    label: Text('Manejo de Errores'),
-                  ),
-                  ],
-                  selectedIndex: selectedIndex,
-                  onDestinationSelected: (value) {
-                    setState(() {
-                      selectedIndex = value;
-                    });
-                  },
-                  unselectedLabelTextStyle: TextStyle(fontSize: 15),
-                  selectedLabelTextStyle: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                ],
               ),
-              Expanded(
-                child: Container(
-                  color: Theme.of(context).colorScheme.primaryContainer,
-                  child: page,
-                ),
-              ),
-            ],
-          ),
-        );
-      },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Que es Dart?'),
+              selected: selectedIndex == 0,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 0;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.comment),
+              title: Text('Comentarios'),
+              selected: selectedIndex == 1,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 1;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.favorite),
+              title: Text('Constante y Variables'),
+              selected: selectedIndex == 2,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 2;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.star),
+              title: Text('Tipos de Datos'),
+              selected: selectedIndex == 3,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 3;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.calculate),
+              title: Text('Operadores'),
+              selected: selectedIndex == 4,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 4;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.question_mark),
+              title: Text('Operador Ternario'),
+              selected: selectedIndex == 5,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 5;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.alt_route),
+              title: Text('Control Flow'),
+              selected: selectedIndex == 6,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 6;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.list),
+              title: Text('Enums'),
+              selected: selectedIndex == 7,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 7;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.collections),
+              title: Text('Colecciones'),
+              selected: selectedIndex == 8,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 8;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.code),
+              title: Text('Genéricos'),
+              selected: selectedIndex == 9,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 9;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.shield),
+              title: Text('Null Safety'),
+              selected: selectedIndex == 10,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 10;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.functions),
+              title: Text('Funciones'),
+              selected: selectedIndex == 11,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 11;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.build),
+              title: Text('Métodos'),
+              selected: selectedIndex == 12,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 12;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.class_),
+              title: Text('Clases'),
+              selected: selectedIndex == 13,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 13;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.error_outline),
+              title: Text('Excepciones'),
+              selected: selectedIndex == 14,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 14;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.warning_amber),
+              title: Text('Manejo de Errores'),
+              selected: selectedIndex == 15,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 15;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.type_specimen),
+              title: Text('Typedef'),
+              selected: selectedIndex == 16,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 16;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.label),
+              title: Text('Metadata'),
+              selected: selectedIndex == 17,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 17;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.sync),
+              title: Text('Concurrencia'),
+              selected: selectedIndex == 18,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 18;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.link),
+              title: Text('Interoperabilidad'),
+              selected: selectedIndex == 19,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 19;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.style),
+              title: Text('Estilo de Código'),
+              selected: selectedIndex == 20,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 20;
+                });
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+      body: Container(
+        color: Theme.of(context).colorScheme.primaryContainer,
+        child: page,
+      ),
     );
   }
 }

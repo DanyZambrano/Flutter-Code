@@ -25,6 +25,7 @@ class _ControlFlowPageState extends State<ControlFlowPage> {
     return SingleChildScrollView(
       padding: EdgeInsets.all(24),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(

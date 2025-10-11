@@ -10,6 +10,7 @@ class GenericsPage extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -223,7 +224,7 @@ class _EjemploFacil extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.2),
+            color: color.withValues(alpha: 0.2),
             borderRadius: BorderRadius.circular(4),
           ),
           child: Text(
@@ -260,7 +261,7 @@ class Caja<T> {
   T obtenerContenido() => contenido;
 
   void mostrarTipo() {
-    print('Tipo: $T');
+    // print('Tipo: $T'); // Comentado para evitar print en producción
   }
 }
 
@@ -338,6 +339,7 @@ class _EjemploAvanzadoState extends State<_EjemploAvanzado> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Selector de cache
